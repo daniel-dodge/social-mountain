@@ -10,6 +10,7 @@ export default class Edit extends Component {
 
     this.state = {
       text: props.text
+
     };
 
     this.updatePost = this.updatePost.bind( this );
@@ -19,8 +20,9 @@ export default class Edit extends Component {
     this.setState({ text: value });
   }
 
-  updatePost() {
-
+  updatePost(props) {
+  this.props.updatePostFn(this.props.id,this.state.text)
+  this.props.hideEdit()
   }
 
   render() {
